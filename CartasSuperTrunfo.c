@@ -5,13 +5,17 @@ int main()
    char nomeDoJogador[50];
    char boasVindas[50] = "Seja Bem Vindo! Esse é o jogo Super TRUNFO!\n\n";
    // Área para definição das variáveis para armazenar as propriedades das cidades
-   char estado, estado2;                    // Estados de cada carta representado em uma letra
-   char codCarta[10], codCarta2[10];        // Código da carta representado na letra do estao mais o numero da cidade
-   char nomeCidade[20], nomeCidade2[20];    // Nome da cidade da carta
+   char estado, estado2;                   // Estados de cada carta representado em uma letra
+   char codCarta[10], codCarta2[10];       // Código da carta representado na letra do estao mais o numero da cidade
+   char nomeCidade[20], nomeCidade2[20];  // Nome da cidade da carta
    int populacao, populacao2;             // População da cidade
-   float area, area2;                       // Área da cidade em metros quadrados KM²
-   float pib, pib2;                         // Produto interno bruto da cidade
+   float area, area2, pib, pib2, densidadePopulacional, densidadePopulacional2,pibPercapita, pibPercapita2;          // Área da cidade em metros quadrados KM² - Produto interno bruto da cidade
    int pontosTuristicos, pontosTuristicos2; // Número total de pontos turísticos
+   densidadePopulacional = populacao / area;
+   densidadePopulacional2 = populacao2 / area2;
+   pibPercapita = pib / populacao;
+   pibPercapita2 = pib2 / populacao2;
+
 
    // Área para entrada de dados
 
@@ -79,6 +83,9 @@ int main()
    printf("Área: %.2f KM²\n", area);
    printf("PIB: %.2f\n", pib);
    printf("Pontos Turísticos: %d\n \n", pontosTuristicos);
+   printf("Densidade Populacional: %.2f\n", densidadePopulacional);
+   printf("PIB per Capita: %.2f\n", pibPercapita);
+
 
    // Segunda Carta
 
@@ -90,7 +97,8 @@ int main()
    printf("Área: %.2f KM²\n", area2);
    printf("PIB: %.2f\n", pib2);
    printf("Pontos Turísticos: %d\n", pontosTuristicos2);
-
+   printf("Densidade Populacional: %.2f\n", densidadePopulacional2);
+   printf("PIB per Capita: %.2f\n", pibPercapita2);
    printf("CADASTRO CONCLUIDO COM SUCESSO!");
 
    return 0;
