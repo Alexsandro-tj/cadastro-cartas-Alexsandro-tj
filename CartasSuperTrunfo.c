@@ -19,17 +19,18 @@ int main()
     printf("Porfavor, digite seu nome: \n");
     scanf("%s", nomeDoJogador);
     printf("Oi %s! %s", nomeDoJogador, boasVindas);
-    // Cadastro primeira carta
+
+    // Cadastrando a primeira carta
     printf("Vamos começar cadastrando a sua primeira carta \n\n");
 
     printf("Digite o Estado da sua carta, reprensentado por uma letra de, 'A' até 'H':\n");
     scanf(" %c", &estado);
 
     printf("Agora, digite o código da sua carta, com a primeira letra do seu estado, EX.: A01 ou B01: \n");
-    scanf("%s",codCarta);
+    scanf("%s", codCarta);
 
     printf("Digite o nome da cidade com uma palavra: \n");
-    scanf("%s",nomeCidade);
+    scanf("%s", nomeCidade);
 
     printf("Certo, agora digite a população total da sua cidade: \n");
     scanf("%d", &populacao);
@@ -50,10 +51,10 @@ int main()
     scanf(" %c", &estado2);
 
     printf("Agora, digite o código da sua carta, com a primeira letra do seu estado, EX.: A01 ou B01 \n");
-    scanf("%s",codCarta2);
+    scanf("%s", codCarta2);
 
     printf("Digite o nome da cidade com uma palavra: \n");
-    scanf("%s",nomeCidade2);
+    scanf("%s", nomeCidade2);
 
     printf("Certo, agora digite a população total da sua cidade: \n");
     scanf("%d", &populacao2);
@@ -73,11 +74,12 @@ int main()
     float densidadePopulacional2 = populacao2 / area2;
     float pibPercapita = pib / populacao;
     float pibPercapita2 = pib2 / populacao2;
+    float superPoder = populacao + area + pib + pontosTuristicos + pibPercapita + densidadePopulacional;
+    float superPoder2 = (float)populacao2 + area2 + pib2 + pontosTuristicos2 + pibPercapita2 + densidadePopulacional2;
 
     // Área para exibição dos dados da cidade
 
     // Primeira Carta
-
     printf("Carta 1:\n");
     printf("Estado: %c \n", estado);
     printf("Código: %s\n", codCarta);
@@ -85,12 +87,11 @@ int main()
     printf("População: %d\n", populacao);
     printf("Área: %.2f KM²\n", area);
     printf("PIB: %.2f\n", pib);
-    printf("Pontos Turísticos: %d\n \n", pontosTuristicos);
+    printf("Pontos Turísticos: %d\n", pontosTuristicos);
     printf("Densidade Populacional: %.2f \n", densidadePopulacional);
     printf("PIB per Capita: %.2f \n \n", pibPercapita);
 
     // Segunda Carta
-
     printf("Carta 2:\n");
     printf("Estado: %c \n", estado2);
     printf("Código: %s\n", codCarta2);
@@ -101,7 +102,33 @@ int main()
     printf("Pontos Turísticos: %d\n", pontosTuristicos2);
     printf("Densidade Populacional: %.2f \n", densidadePopulacional2);
     printf("PIB per Capita: %.2f \n", pibPercapita2);
-    printf("CADASTRO CONCLUIDO COM SUCESSO!");
+    printf("CADASTRO CONCLUIDO COM SUCESSO!\n\n");
+
+    // Campo de Batalha das cartas (Comparação)
+    int comparacaoPopulacao = populacao > populacao2;
+    int comparacaoArea = area > area2;
+    int comparacaoPib = pib > pib2;
+    int comparacaoPontosTuristicos = pontosTuristicos > pontosTuristicos2;
+    int comparacaoDensidadePopulacional = densidadePopulacional < densidadePopulacional2;
+    int comparacaoPibPerCapita = pibPercapita > pibPercapita2;
+    int comparacaoSuperPoder = superPoder > superPoder2;
+    int statusCarta = 1;
+
+    printf("*** Comparação de Cartas! *** \n\n");
+
+    printf("População: Carta %d venceu! (%d)\n",statusCarta + (comparacaoPopulacao == 0),comparacaoPopulacao);
+
+    printf("Área: Carta %d venceu! (%d)\n",statusCarta + (comparacaoArea == 0),comparacaoArea);
+
+    printf("PIB: Carta %d venceu! (%d)\n",statusCarta + (comparacaoPib == 0),comparacaoPib);
+
+    printf("Pontos Turísticos: Carta %d Venceu! (%d)\n",statusCarta + (comparacaoPontosTuristicos == 0), comparacaoPontosTuristicos);
+
+    printf("Densidade Populacional: Carta %d venceu! (%d)\n",statusCarta + (comparacaoDensidadePopulacional == 0), comparacaoDensidadePopulacional);
+
+    printf("PIB per Capita: Carta %d venceu! (%d)\n", statusCarta + (comparacaoPibPerCapita ==0), comparacaoPibPerCapita);
+
+    printf("Super Poder: Carta %d venceu! (%d)\n",statusCarta + (comparacaoSuperPoder == 0), comparacaoSuperPoder);
 
     return 0;
 }
