@@ -3,9 +3,11 @@
 
 int main()
 {
-    char nomeDoJogador[50];
-    char boasVindas[50] = "Seja Bem Vindo! Esse é o jogo Super TRUNFO!\n\n";
+    char nomeDoJogador[50], nomeDoJogador2[50];
+    char boasVindas[50] = "Sejam Bem Vindos! Esse é o jogo Super TRUNFO!\n\n";
+
     // Área para definição das variáveis para armazenar as propriedades das cidades
+
     char estado, estado2;                    // Estados de cada carta representado em uma letra
     char codCarta[5], codCarta2[5];          // Código da carta representado na letra do estao mais o numero da cidade
     char nomeCidade[20], nomeCidade2[20];    // Nome da cidade da carta
@@ -16,14 +18,19 @@ int main()
     // Área para entrada de dados
 
     printf("Olá! - Primeiramente precisamos conhece-lo(a)\n");
-    printf("Porfavor, digite seu nome: \n");
+    printf("Porfavor, digite o nome do primeiro jogador: \n");
     scanf("%s", nomeDoJogador);
-    printf("Oi %s! %s", nomeDoJogador, boasVindas);
+    printf("Oi %s !\n",nomeDoJogador);
 
+    printf("Agora, digite o nome do segundo jogador: \n");
+    scanf("%s", nomeDoJogador2);
+    printf("Oi %s!\n",nomeDoJogador2);
+    printf("%s\n", boasVindas);
     // Cadastrando a primeira carta
+
     printf("Vamos começar cadastrando a sua primeira carta \n\n");
 
-    printf("Digite o Estado da sua carta, reprensentado por uma letra de, 'A' até 'H':\n");
+    printf("%s digite o Estado da sua carta, reprensentado por uma letra de, 'A' até 'H':\n", nomeDoJogador);
     scanf(" %c", &estado);
 
     printf("Agora, digite o código da sua carta, com a primeira letra do seu estado, EX.: A01 ou B01: \n");
@@ -47,7 +54,7 @@ int main()
     // Cadastro segunda carta
 
     printf("Vamos cadastrar a sua segunda carta\n\n");
-    printf("Digite o Estado da sua carta, reprensentado por uma letreta de, 'A' até 'H'\n");
+    printf("%s digite o Estado da sua carta, reprensentado por uma letreta de, 'A' até 'H'\n",nomeDoJogador2);
     scanf(" %c", &estado2);
 
     printf("Agora, digite o código da sua carta, com a primeira letra do seu estado, EX.: A01 ou B01 \n");
@@ -128,7 +135,19 @@ int main()
 
     printf("PIB per Capita: Carta %d venceu! (%d)\n", statusCarta + (comparacaoPibPerCapita ==0), comparacaoPibPerCapita);
 
-    printf("Super Poder: Carta %d venceu! (%d)\n",statusCarta + (comparacaoSuperPoder == 0), comparacaoSuperPoder);
+    printf("Super Poder: Carta %d venceu! (%d)\n\n",statusCarta + (comparacaoSuperPoder == 0), comparacaoSuperPoder);
+
+
+    printf("*** CARTA VENCEDORA! ***\n\n");
+    printf("Atributo escolhido para comparação: PIB\n");
+
+    if (pib > pib2){
+        printf("A carta vencedora é a Carta 1! Parabéns %s!\n", nomeDoJogador);
+    }
+    else{
+        printf("A carta vencedora é a Carta 2! Parabéns %s!\n", nomeDoJogador2);
+    }
+    
 
     return 0;
 }
