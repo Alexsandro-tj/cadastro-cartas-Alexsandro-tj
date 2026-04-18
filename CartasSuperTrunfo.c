@@ -140,6 +140,9 @@ int main()
 
     printf("*** CARTA VENCEDORA! ***\n\n");
     printf("Atributo escolhido para comparação: PIB\n");
+    printf("Carta 1 - %S: %.2f\n",nomeCidade,pib);
+    printf("Carta 2 - %S: %.2f\n",nomeCidade2,pib2);
+
 
     if (pib > pib2){
         printf("A carta vencedora é a Carta 1! Parabéns %s!\n", nomeDoJogador);
